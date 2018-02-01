@@ -13,6 +13,12 @@ const finalResults = ({
   pgVgRatio,
   targetStrength
 }) => {
+  console.log('**', baseStrength,
+    batchSize,
+    flavours = [],
+    nicotineBaseLiquid,
+    pgVgRatio,
+    targetStrength)
   const nicotineBaseResult = calcNicotineBase(
     baseStrength,
     targetStrength,
@@ -24,6 +30,10 @@ const finalResults = ({
   const vgResult = calcVG(pgVgRatio, batchSize, nicotineBaseResult, flavoursResult);
   const totalsResult = calcTotals(nicotineBaseResult, flavoursResult, pgResult, vgResult);
 
+  console.log('pgresult', pgResult);
+  console.log('vgResult', vgResult);
+
+
   return {
     nicotineBase: normalize(nicotineBaseResult),
     pg: normalize(pgResult),
@@ -34,3 +44,12 @@ const finalResults = ({
 };
 
 export default finalResults;
+
+const bad = {
+  baseStrength: 51,
+  batchSize: 321,
+  flavours: [],
+  nicotineBaseLiquid: "PG",
+  pgVgRatio: 35,
+  targetStrength: 18
+}

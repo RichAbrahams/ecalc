@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
-import { Table, Header } from "semantic-ui-react";
+import { Table, Header, Message, Icon } from "semantic-ui-react";
 import SaveModal from './SaveModal';
 import * as actions from "../../actions";
 import NewRecipeButton from './NewRecipeButton';
@@ -25,6 +25,7 @@ export class componentName extends Component {
     if (!this.props.recipe) {
       this.props.history.push('/');
     }
+
   }
 
   generatePDF = () => {
@@ -42,11 +43,17 @@ export class componentName extends Component {
     doc.save('e-liquid_recipe.pdf');
   }
 
+  newRecipe = () => {
+    this.props.history.push('/');
+  }
+
   render() {
-    const { nicotineBase, pg, vg, flavors, totals } = this.props.recipe || {};
+    const { nicotineBase, pg, vg, flavors, totals, name } = this.props.recipe || {};
+    const showSavedButton = this.props.showSavedButton;
+    const showSavedMessage = this.props.showSavedMessage;
     return (
       <MainWrapper>
-        <Header style={{ marginTop: '5rem'}}>Finished Recipe</Header>
+        <Header style={{ marginTop: '5rem'}}>Finished Recipe {name && `: ${name}`}</Header>
         { this.props.recipe && <Fragment>
           <Table celled unstackable={ true } style={{ maxWidth: '700px'}}>
             <Table.Header>
@@ -100,9 +107,12 @@ export class componentName extends Component {
               </Table.Row>
             </Table.Body>
           </Table>
+          { showSavedMessage && <Message positive style={{ width: "100%", display: "flex", maxWidth: "700px", justifyContent:"center"}}><Icon color='green' name='check'/>
+          <span>Recipe saved</span>
+        </Message> }
           <ButtonWrapper>
             <NewRecipeButton newRecipe={ this.newRecipe } />
-            <SaveModal {...this.props} />
+            { showSavedButton && <SaveModal {...this.props} />}
             <PrintButton newPrintTab={ this.generatePDF } />
           </ButtonWrapper>
         </Fragment> }
@@ -113,7 +123,8 @@ export class componentName extends Component {
 
 const mapStateToProps = (state) => ({
   recipe: state.formData.recipe,
-  saved: state.formData.saved
+  showSavedMessage: state.formData.showSavedMessage,
+  showSavedButton: state.formData.showSavedButton
 });
 
 

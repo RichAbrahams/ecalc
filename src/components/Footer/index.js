@@ -1,5 +1,4 @@
 import React from "react";
-import { Segment} from 'semantic-ui-react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`

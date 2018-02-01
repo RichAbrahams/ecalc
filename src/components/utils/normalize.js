@@ -9,7 +9,7 @@ export const normalize = (input) => {
   const output = Object.assign({}, {...input});
   for (const key in output) {
     if (typeof output[key] === "number") {
-      output[key] = formatNumber(output[key], 2);
+      output[key] = formatNumber(output[key], 1);
     }
   }
   return output;

@@ -3,7 +3,6 @@ import { Field, reduxForm } from "redux-form";
 import RenderTextInput from "./RenderTextInput";
 import ButtonWrapper from "../RecipeForm/FormPages/sharedComponents/ButtonWrapper";
 import SubmitButton from "./SubmitButton";
-import CloseButton from './CloseButton';
 import Form from '../RecipeForm/FormPages/sharedComponents/Form';
 
 const validate = (values) => {
@@ -15,18 +14,18 @@ const validate = (values) => {
 }
 
 const SaveForm = props => {
-  const { handleSubmit, saved, handleClose } = props;
+  const { handleSubmit } = props;
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={ handleSubmit }>
       <Field
         name="recipeName"
-        component={RenderTextInput}
+        component={ RenderTextInput }
         label="Recipe Name"
         type="text"
+        placeholder="Recipe Name"
       />
       <ButtonWrapper>
-        {saved === null && <SubmitButton {...props} />}
-        {saved === true && <CloseButton handleClose={handleClose} />}
+      <SubmitButton {...props} />
       </ButtonWrapper>
     </Form>
   );

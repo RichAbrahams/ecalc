@@ -1,10 +1,11 @@
-import { SET_PAGE, SUBMIT_FORM, SAVE_COMPLETE } from '../actions';
+import { SET_PAGE, SUBMIT_FORM, SAVE_COMPLETE, VIEW_RECIPE } from '../actions';
 import calcRecipeResult from '../components/utils/calcRecipeResult';
 
 const initialState = {
   currentPage: 1,
   recipe: null,
-  saved: null,
+  showSavedButton: true,
+  showSavedMessage: false,
 }
 export default (state = initialState, action) => {
   switch (action.type) {
@@ -12,10 +13,14 @@ export default (state = initialState, action) => {
       return Object.assign({...state}, { currentPage: action.payload })
     }
     case SUBMIT_FORM: {
-      return Object.assign({...state}, { currentPage: 1, recipe: calcRecipeResult(action.payload), saved: null });
+      console.log(action.payload);
+      return Object.assign({...state}, { currentPage: 1, recipe: calcRecipeResult(action.payload), showSavedButton: true, showSavedMessage: false });
     }
     case SAVE_COMPLETE: {
-      return Object.assign({...state}, { saved: action.payload });
+      return Object.assign({...state}, { showSavedMessage: true, showSavedButton: false });
+    }
+    case VIEW_RECIPE: {
+      return Object.assign({...state}, { recipe: action.payload, showSavedMessage: false, showSavedButton: false });
     }
     default:
       return state;

@@ -10,9 +10,7 @@ import Page5 from "./FormPages/Page5";
 import Page6 from "./FormPages/Page6";
 import { destroy } from 'redux-form';
 import MainWrapper from '../MainWrapper';
-import Step from './Step';
 import Progress from './Progress';
-import { Card } from 'semantic-ui-react';
 
 const wizardSubmit = (payload, submitForm, history, destroyForm) => {
   submitForm(payload);

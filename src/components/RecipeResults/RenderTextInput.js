@@ -9,7 +9,6 @@ const renderInput = props => {
       <Input
         value={props.input.value}
         type={props.type}
-        labelPosition="right"
         onChange={(param, data) => props.input.onChange(data.value)}
         placeholder={props.placeholder}
         error={err ? true : false}
