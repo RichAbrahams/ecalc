@@ -3,21 +3,26 @@ import RangeInput from "../sharedComponents/RangeInput";
 import PgVgRatioIndicator from "./PgVgRatioIndicator";
 import RangeWrapper from '../sharedComponents/RangeWrapper';
 import FormField from '../sharedComponents/FormField';
+import formatNumber from '../../../utils/formatNumber';
 
-const renderInput = ({ input, label, min, max, pgVgRatio }) => {
+const renderInput = ({ input, label, min, max, pg, pgVgRatio}) => {
   return (
     <RangeWrapper>
-      <PgVgRatioIndicator strength={pgVgRatio} />
+      <PgVgRatioIndicator pgVgRatio={pgVgRatio}/>
         <FormField>
           <RangeInput
             {...input}
             onChange={e => {
-              const val = e.target.value;
-              input.onChange(val);
+              let val = e.target.value;
+              if (val < min) {
+                val = min;
+              }
+              input.onChange(formatNumber(val, 10));
             }}
             type="range"
             min={min}
             max={max}
+            step="any"
           />
         </FormField>
     </RangeWrapper>

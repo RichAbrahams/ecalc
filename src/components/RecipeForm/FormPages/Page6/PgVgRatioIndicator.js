@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Statistic } from "semantic-ui-react";
+import formatNumber from '../../../utils/formatNumber';
 
 const Wrapper = styled.div`
   grid-column: 1/13;
@@ -9,15 +10,18 @@ const Wrapper = styled.div`
   margin-top: 2rem;
 `;
 
-export default ({ strength }) => {
+export default ({ pgVgRatio }) => {
+  const pg = formatNumber(pgVgRatio, 0);
+  const vg = formatNumber(100 - pgVgRatio, 0);
+  console.log(pgVgRatio, pg, vg)
   return (
       <Wrapper>
         <Statistic size="small">
-          <Statistic.Value>{strength}%</Statistic.Value>
+          <Statistic.Value>{pg}%</Statistic.Value>
           <Statistic.Label>PG</Statistic.Label>
         </Statistic>
         <Statistic size="small">
-          <Statistic.Value>{100 - strength}%</Statistic.Value>
+          <Statistic.Value>{vg}%</Statistic.Value>
           <Statistic.Label>VG</Statistic.Label>
         </Statistic>
     </Wrapper>

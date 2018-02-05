@@ -20,7 +20,7 @@ const totals = (nicotineBaseResult, flavoursResult, pgResult, vgResult) => {
     drops,
     percentage,
     ml,
-    name: `Totals:`
+    name: `Totals`
   };
 }
 

@@ -27,7 +27,6 @@ const pgMinMax = (
       }
     });
   }
-  console.log('pgminmax', formatNumber(pgContent, 2), formatNumber(vgContent, 2));
   return [pgContent, vgContent];
 };
 

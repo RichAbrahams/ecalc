@@ -1,5 +1,6 @@
 import React from "react";
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Wrapper = styled.div`
   display: flex;
@@ -9,9 +10,14 @@ const Wrapper = styled.div`
   background: #2185d0;
 `;
 
+const A = styled.a`
+  color: white;
+  text-decoration: none;
+`;
+
 const Footer = () => (
   <Wrapper>
-    <h1>Footer</h1>
+    <Link to="/terms"><A>Terms & Conditions</A></Link>
   </Wrapper>
 );
 

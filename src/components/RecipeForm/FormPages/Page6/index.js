@@ -9,6 +9,7 @@ import Header from "./Header";
 import ButtonWrapper from "../sharedComponents/ButtonWrapper";
 import Form from "../sharedComponents/Form";
 import { Message } from 'semantic-ui-react'
+import formatNumber from '../../../utils/formatNumber';
 
 const info = (pgContent, vgContent) => {
   return (
@@ -40,15 +41,14 @@ const FormPage = props => {
   return (
     <Form onSubmit={handleSubmit}>
       <Header />
-      {info(pgContent, vgContent)}
+      {info(formatNumber(pgContent, 2), formatNumber(vgContent, 2))}
       <Field
         name="pgVgRatio"
         component={RenderPgVgRatioRange}
-        label="Desired PG/VG Ratio"
+        label="Target PG/VG Ratio"
         type="range"
         min={pgContent}
-        max={100 - vgContent}
-        step="1"
+        max={(100 - vgContent)}
         pgVgRatio={pgVgRatio}
         parse={Number}
       />
@@ -64,7 +64,8 @@ let SelectingFormValuesForm = reduxForm({
   form: "wizard",
   destroyOnUnmount: false,
   forceUnregisterOnUnmount: true,
-  onSubmitSuccess: (result, dispatch, props) => {}
+  onSubmitSuccess: (result, dispatch, props) => {
+  }
 })(FormPage);
 
 const selector = formValueSelector("wizard");

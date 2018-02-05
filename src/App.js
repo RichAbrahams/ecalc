@@ -7,6 +7,7 @@ import RecipeResults from './components/RecipeResults';
 import PrintTab from './components/RecipeResults/PrintTab';
 import SavedRecipes from './components/SavedRecipes';
 import Footer from './components/Footer';
+import Terms from './components/Terms';
 
 class App extends Component {
   render() {
@@ -23,6 +24,7 @@ class App extends Component {
                 <Route exact path="/" component={ RecipeForm } />
                 <Route path="/reciperesults" component={ RecipeResults } />
                 <Route path="/savedrecipes" component={ SavedRecipes } />
+                <Route path="/terms" component={ Terms } />
                 <Footer />
               </Fragment>
               </Route>

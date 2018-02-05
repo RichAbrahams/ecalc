@@ -13,7 +13,7 @@ export default (state = initialState, action) => {
       return Object.assign({...state}, { currentPage: action.payload })
     }
     case SUBMIT_FORM: {
-      console.log(action.payload);
+      console.log('submit actions', action.payload);
       return Object.assign({...state}, { currentPage: 1, recipe: calcRecipeResult(action.payload), showSavedButton: true, showSavedMessage: false });
     }
     case SAVE_COMPLETE: {

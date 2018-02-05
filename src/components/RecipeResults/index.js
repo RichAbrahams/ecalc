@@ -53,7 +53,7 @@ export class componentName extends Component {
     const showSavedMessage = this.props.showSavedMessage;
     return (
       <MainWrapper>
-        <Header style={{ marginTop: '5rem'}}>Finished Recipe {name && `: ${name}`}</Header>
+        <Header style={{ marginTop: '5rem'}}>Finished Recipe{name && `: ${name}`}</Header>
         { this.props.recipe && <Fragment>
           <Table celled unstackable={ true } style={{ maxWidth: '700px'}}>
             <Table.Header>

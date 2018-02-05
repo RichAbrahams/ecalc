@@ -13,7 +13,10 @@ export default class SaveModal extends Component {
   render() {
     const { recipe, saveRecipe } = this.props;
     return (
-      <Modal trigger={
+      <Modal
+      closeOnDimmerClick={false}
+      closeOnDocumentClick={false}
+      trigger={
       <Button
         icon
         labelPosition='right'
@@ -30,9 +33,6 @@ export default class SaveModal extends Component {
                 )
               }
               recipe={recipe}
-              closeOnDimmerClick={false}
-              closeOnDocumentClick={false}
-              handleClose={this.handleClose}
             />
           </Modal.Description>
         </Modal.Content>

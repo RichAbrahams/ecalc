@@ -21,3 +21,8 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+a {
+  color: white;
+  text-decoration: none; 
+}
