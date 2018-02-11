@@ -1,13 +1,12 @@
 import React from "react";
 import { Button } from "semantic-ui-react";
 
-export default ({ handleClose}) => {
+export default ({ toggleModal }) => {
   return (
     <Button
-      content="Close"
-      primary
+      content="Cancel"
       type="button"
-      onClick={handleClose}
+      onClick={ toggleModal }
     />
   );
 };

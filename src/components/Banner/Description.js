@@ -1,28 +1,16 @@
-
-
 import React from 'react'
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
   display: flex;
-  align-items: center;
   justify-content: center;
-`
-
-const H1 = styled.h1`
-  font-size: 48px;
-  font-family: 'Oswald', sans-serif;
-  color: white;
-  line-height: 1.2em;
+  align-items: center;
   text-align: center;
-`;
-
+`
 export default () => {
   return (
     <Wrapper>
-      <H1>
-        E-LIQUID WIZARD
-      </H1>
+      <p>Easy E-liquid calculations with save and print.</p>
     </Wrapper>
   )
 }

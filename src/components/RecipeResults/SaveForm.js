@@ -1,9 +1,9 @@
 import React from "react";
 import { Field, reduxForm } from "redux-form";
 import RenderTextInput from "./RenderTextInput";
-import ButtonWrapper from "../RecipeForm/FormPages/sharedComponents/ButtonWrapper";
 import SubmitButton from "./SubmitButton";
-import Form from '../RecipeForm/FormPages/sharedComponents/Form';
+import CancelButton from './CancelButton';
+import styled from 'styled-components';
 
 const validate = (values) => {
   const errors = {}
@@ -12,6 +12,23 @@ const validate = (values) => {
   }
   return errors
 }
+
+const ButtonWrapper = styled.div`
+display: flex;
+justify-content: flex-start;
+margin-top: 3rem;
+width: 100%;
+`;
+
+const Form = styled.form`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  border: 1px solid rgba(34,36,38,.15);
+  padding: 2rem;
+`;
+
 
 const SaveForm = props => {
   const { handleSubmit } = props;
@@ -26,6 +43,7 @@ const SaveForm = props => {
       />
       <ButtonWrapper>
       <SubmitButton {...props} />
+      <CancelButton {...props} />
       </ButtonWrapper>
     </Form>
   );

@@ -10,14 +10,14 @@ const Wrapper = styled.div`
   background: #2185d0;
 `;
 
-const A = styled.a`
+const A = styled(Link)`
   color: white;
   text-decoration: none;
 `;
 
 const Footer = () => (
   <Wrapper>
-    <Link to="/terms"><A>Terms & Conditions</A></Link>
+    <A to="/terms">Terms & Conditions</A>
   </Wrapper>
 );
 

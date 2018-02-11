@@ -6,6 +6,7 @@ export const GET_SAVED_RECIPES = "GET_SAVED_RECIPES";
 export const DELETE_SAVED_RECIPE = "DELETE_SAVED_RECIPE";
 export const GET_SAVED_RECIPES_SUCCESS = "GET_SAVED_RECIPES_SUCCESS";
 export const VIEW_RECIPE = "VIEW_RECIPE";
+export const TOGGLE_MODAL = "TOGGLE_MODAL";
 
 export const setPage = (payload) => ({
   type: SET_PAGE,
@@ -44,4 +45,8 @@ export const getSavedRecipesSuccess = (payload) => ({
 export const viewRecipe = (payload) => ({
   type: VIEW_RECIPE,
   payload
+});
+
+export const toggleModal = () => ({
+  type: TOGGLE_MODAL,
 });

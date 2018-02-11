@@ -13,7 +13,6 @@ import MainWrapper from '../MainWrapper';
 import Progress from './Progress';
 
 const wizardSubmit = (payload, submitForm, history, destroyForm) => {
-  console.log('submitted')
   submitForm(payload);
   history.push('/reciperesults');
   destroyForm('wizard');

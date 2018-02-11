@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
-import { Table, Header, Message, Icon } from "semantic-ui-react";
+import { Table, Header, Message, Icon, Button } from "semantic-ui-react";
 import SaveModal from './SaveModal';
 import * as actions from "../../actions";
 import NewRecipeButton from './NewRecipeButton';
@@ -9,6 +9,7 @@ import MainWrapper from '../MainWrapper';
 import jsPDF from 'jspdf';
 import flatten from 'flatten';
 import styled from 'styled-components';
+import SaveButton from './SaveButton';
 require('jspdf-autotable');
 
 const ButtonWrapper = styled.div`
@@ -24,6 +25,9 @@ export class componentName extends Component {
   componentWillMount() {
     if (!this.props.recipe) {
       this.props.history.push('/');
+    }
+    if (this.props.showSavedModal) {
+      this.props.toggleModal();
     }
 
   }
@@ -49,10 +53,10 @@ export class componentName extends Component {
 
   render() {
     const { nicotineBase, pg, vg, flavors, totals, name } = this.props.recipe || {};
-    const showSavedButton = this.props.showSavedButton;
-    const showSavedMessage = this.props.showSavedMessage;
+    const { showSavedButton, showSavedMessage, showSavedModal } = this.props;
     return (
       <MainWrapper>
+        { showSavedModal && <SaveModal {...this.props} /> }
         <Header style={{ marginTop: '5rem'}}>Finished Recipe{name && `: ${name}`}</Header>
         { this.props.recipe && <Fragment>
           <Table celled unstackable={ true } style={{ maxWidth: '700px'}}>
@@ -112,7 +116,7 @@ export class componentName extends Component {
         </Message> }
           <ButtonWrapper>
             <NewRecipeButton newRecipe={ this.newRecipe } />
-            { showSavedButton && <SaveModal {...this.props} />}
+            { showSavedButton && <SaveButton {...this.props}/> }
             <PrintButton newPrintTab={ this.generatePDF } />
           </ButtonWrapper>
         </Fragment> }
@@ -124,12 +128,14 @@ export class componentName extends Component {
 const mapStateToProps = (state) => ({
   recipe: state.formData.recipe,
   showSavedMessage: state.formData.showSavedMessage,
-  showSavedButton: state.formData.showSavedButton
+  showSavedButton: state.formData.showSavedButton,
+  showSavedModal: state.formData.showSavedModal,
 });
 
 
 const mapDispatchToProps = dispatch => ({
   saveRecipe: payload => dispatch(actions.saveRecipe(payload)),
+  toggleModal: () => dispatch(actions.toggleModal()),
 });
 
 

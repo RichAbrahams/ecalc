@@ -13,7 +13,6 @@ const Wrapper = styled.div`
 export default ({ pgVgRatio }) => {
   const pg = formatNumber(pgVgRatio, 0);
   const vg = formatNumber(100 - pgVgRatio, 0);
-  console.log(pgVgRatio, pg, vg)
   return (
       <Wrapper>
         <Statistic size="small">
