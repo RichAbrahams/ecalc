@@ -7,12 +7,11 @@ const Wrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: flex-start;
-  margin: 1rem 0rem 5rem 0rem;
+  margin: 1rem 0rem 2rem 0rem;
   & > div {
     width: 100%;
   }
 `;
-
 
 const ProgressExampleStandard = ({ currentPage }) => (
   <Wrapper>
