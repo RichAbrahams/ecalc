@@ -41,7 +41,7 @@ export default function register() {
       }
     });
   } else {
-    console.log('dev env, sw not registered');
+    console.log('sw not registered');
     console.log('dev env:', process.env.NODE_ENV);
   }
 }
