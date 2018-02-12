@@ -34,6 +34,7 @@ const renderInput = ({ input, label, min, max, baseStrength }) => {
             type="range"
             min={min}
             max={max}
+            label="nicotine base strength"
           />
       </FormField>
       <ButtonGroup widths="3" size='mini' >

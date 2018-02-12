@@ -29,31 +29,6 @@ export class Banner extends Component {
     this.props.setPage(1);
   };
 
-//   render() {
-//     return (
-//       <OuterWrapper>
-//           <SiteName>E LIQUID WIZARD</SiteName>
-//         <Description />
-//         <div>
-//           <Nav resetPage={(e) => this.resetPage(e)}/>
-//         </div>
-
-//       </OuterWrapper>
-//     )
-//   }
-// }
-
-
-// render() {
-//   return (
-//     <OuterWrapper>
-//       <SiteName>E-LIQUID WIZARD</SiteName>
-//       <Description>Easy E-liquid calculations with print and save.</Description>
-//       <Nav />
-//     </OuterWrapper>
-//   )
-// }
-
 render() {
   return (
     <OuterWrapper>

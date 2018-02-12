@@ -23,6 +23,7 @@ const renderInput = ({ input, label, min, max, pg, pgVgRatio}) => {
             min={min}
             max={max}
             step="any"
+            label="target pg/vg ratio"
           />
         </FormField>
     </RangeWrapper>

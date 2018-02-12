@@ -18,6 +18,7 @@ const renderInput = ({ input, label, min, max, targetStrength}) => {
             type="range"
             min={min}
             max={max}
+            label="target nicotine strength"
           />
       </FormField>
     </RangeWrapper>
