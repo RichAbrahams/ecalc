@@ -35,11 +35,11 @@ return {
 
 export default finalResults;
 
-const bad = {
-  baseStrength: 51,
-  batchSize: 321,
-  flavours: [],
-  nicotineBaseLiquid: "PG",
-  pgVgRatio: 35,
-  targetStrength: 18
-}
+// const bad = {
+//   baseStrength: 51,
+//   batchSize: 321,
+//   flavours: [],
+//   nicotineBaseLiquid: "PG",
+//   pgVgRatio: 35,
+//   targetStrength: 18
+// }

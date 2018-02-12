@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom';
 import SiteName from './SiteName';
 import Nav from './nav';
 import styled from 'styled-components';

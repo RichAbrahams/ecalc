@@ -40,6 +40,8 @@ export default function register() {
         registerValidSW(swUrl);
       }
     });
+  } else {
+    console.log('dev env, sw not registered');
   }
 }
 
@@ -47,10 +49,12 @@ function registerValidSW(swUrl) {
   navigator.serviceWorker
     .register(swUrl)
     .then(registration => {
+      console.log('sw registered');
       registration.onupdatefound = () => {
         const installingWorker = registration.installing;
         installingWorker.onstatechange = () => {
           if (installingWorker.state === 'installed') {
+            console.log('has controller:', !!navigator.serviceWorker.controller)
             if (navigator.serviceWorker.controller) {
               // At this point, the old content will have been purged and
               // the fresh content will have been added to the cache.

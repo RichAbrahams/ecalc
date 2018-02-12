@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
-import { Table, Header, Message, Icon, Button } from "semantic-ui-react";
+import { Table, Header, Message, Icon } from "semantic-ui-react";
 import SaveModal from './SaveModal';
 import * as actions from "../../actions";
 import NewRecipeButton from './NewRecipeButton';

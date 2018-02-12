@@ -1,6 +1,5 @@
 import baseToAdd from "../../../utils/calcBaseToAdd";
 import mlToPercent from '../../../utils/mlToPercent';
-import formatNumber from '../../../utils/formatNumber';
 
 const pgMinMax = (
   targetStrength,
