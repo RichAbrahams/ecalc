@@ -1,9 +1,13 @@
-import React from "react";
+import React, { Component } from 'react'
 
-const Advert = () => (
-  <section>
-    <h1>Advert</h1>
-  </section>
-);
+export default class Advert extends Component {
 
-export default Advert
+
+  render() {
+    return (
+         <div className='ad'>
+        <h1>ad</h1>
+      </div>
+    )
+  }
+}

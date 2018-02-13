@@ -27,7 +27,6 @@ class App extends Component {
               <Route path="/printrecipe" component={ PrintTab } />
               <Route path="/">
                 <Fragment>
-                  <Advert />
                   <Banner />
                   <Route exact path="/" component={ RecipeForm } />
                   <Route path="/reciperesults" component={ RecipeResults } />

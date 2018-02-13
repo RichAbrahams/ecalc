@@ -43,7 +43,7 @@ export class componentName extends Component {
     ];
     const buildRows = Object.values(this.props.recipe);
     const rows = flatten(buildRows);
-    doc.autoTable(columns, rows);
+    doc.autoTable(columns, rows, { theme: 'grid' });
     doc.save('e-liquid_recipe.pdf');
   }
 
@@ -56,10 +56,10 @@ export class componentName extends Component {
     const { showSavedButton, showSavedMessage, showSavedModal } = this.props;
     return (
       <MainWrapper>
-        { showSavedModal && <SaveModal {...this.props} /> }
-        <Header style={{ marginTop: '5rem'}}>Finished Recipe{name && `: ${name}`}</Header>
+        { showSavedModal && <SaveModal { ...this.props } /> }
+        <Header style={ { marginTop: '5rem' } }>Finished Recipe{ name && `: ${name}` }</Header>
         { this.props.recipe && <Fragment>
-          <Table celled unstackable={ true } style={{ maxWidth: '700px'}}>
+          <Table celled unstackable={ true } style={ { maxWidth: '700px' } }>
             <Table.Header>
               <Table.Row>
                 <Table.HeaderCell>Ingredient</Table.HeaderCell>
@@ -75,7 +75,7 @@ export class componentName extends Component {
                 <Table.Cell>{ nicotineBase.ml }</Table.Cell>
                 <Table.Cell>{ nicotineBase.drops }</Table.Cell>
                 <Table.Cell>{ nicotineBase.g }</Table.Cell>
-                <Table.Cell>{ `${nicotineBase.percentage }%` }</Table.Cell>
+                <Table.Cell>{ `${nicotineBase.percentage}%` }</Table.Cell>
               </Table.Row>
               <Table.Row>
                 <Table.Cell>PG</Table.Cell>
@@ -111,12 +111,12 @@ export class componentName extends Component {
               </Table.Row>
             </Table.Body>
           </Table>
-          { showSavedMessage && <Message positive style={{ width: "100%", display: "flex", maxWidth: "700px", justifyContent:"center"}}><Icon color='green' name='check'/>
-          <span>Recipe saved</span>
-        </Message> }
+          { showSavedMessage && <Message positive style={ { width: "100%", display: "flex", maxWidth: "700px", justifyContent: "center" } }><Icon color='green' name='check' />
+            <span>Recipe saved</span>
+          </Message> }
           <ButtonWrapper>
             <NewRecipeButton newRecipe={ this.newRecipe } />
-            { showSavedButton && <SaveButton {...this.props}/> }
+            { showSavedButton && <SaveButton { ...this.props } /> }
             <PrintButton newPrintTab={ this.generatePDF } />
           </ButtonWrapper>
         </Fragment> }
