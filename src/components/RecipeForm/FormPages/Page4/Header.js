@@ -20,7 +20,7 @@ export default () => {
     <Div>
       <Header>Nicotine Base Diluent</Header>
       <Popup
-        trigger={<Icon name="question circle" />}
+        trigger={<Icon name="question circle" style={{ fontSize: "1rem", transform: "translate(4px, 1px"}}/>}
         content="The the diluent used in your nicotine base liquid.  This should be stated on the bottle label."
         inverted
       />

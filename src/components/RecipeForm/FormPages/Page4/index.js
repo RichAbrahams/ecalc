@@ -8,7 +8,7 @@ import Header from "./Header";
 import ButtonWrapper from "../sharedComponents/ButtonWrapper";
 import Form from "../sharedComponents/Form";
 
-const FormPage = props => {
+let FormPage4 = props => {
   const {
     handleSubmit,
     nicotineBaseLiquid,
@@ -31,20 +31,21 @@ const FormPage = props => {
 };
 
 
-let SelectingFormValuesForm = reduxForm({
-  form: "wizard", // <------ same form name
-  destroyOnUnmount: false, // <------ preserve form data
-  forceUnregisterOnUnmount: true, // <------ unregister fields on unmount
-})(FormPage);
-
-const selector = formValueSelector('wizard') // <-- same as form name
-SelectingFormValuesForm = connect(
-  state => {
-    const nicotineBaseLiquid = selector(state, 'nicotineBaseLiquid')
-    return {
-      nicotineBaseLiquid
-    }
+FormPage4 = reduxForm({
+  form: "FormPage4",
+  destroyOnUnmount: false,
+  initialValues: {
+    nicotineBaseLiquid: "PG"
   }
-)(SelectingFormValuesForm)
+})(FormPage4);
 
-export default SelectingFormValuesForm
+const selector = formValueSelector("FormPage4");
+
+FormPage4 = connect(state => {
+  const nicotineBaseLiquid = selector(state, "nicotineBaseLiquid");
+  return {
+    nicotineBaseLiquid
+  };
+})(FormPage4);
+
+export default FormPage4;

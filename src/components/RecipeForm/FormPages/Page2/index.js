@@ -8,7 +8,7 @@ import Header from "./Header";
 import ButtonWrapper from "../sharedComponents/ButtonWrapper";
 import Form from "../sharedComponents/Form";
 
-const FormPage = props => {
+let FormPage2 = props => {
   const { handleSubmit, targetStrength } = props;
   return (
     <Form onSubmit={handleSubmit}>
@@ -30,19 +30,21 @@ const FormPage = props => {
   );
 };
 
-let SelectingFormValuesForm = reduxForm({
-  form: "wizard", // <------ same form name
-  destroyOnUnmount: false, // <------ preserve form data
-  forceUnregisterOnUnmount: true // <------ unregister fields on unmount
-})(FormPage);
+FormPage2 = reduxForm({
+  form: 'FormPage2',
+  destroyOnUnmount: false,
+  initialValues: {
+    targetStrength: 18
+  }
+})(FormPage2)
 
-// Decorate with connect to read form wizard
-const selector = formValueSelector("wizard"); // <-- same as form name
-SelectingFormValuesForm = connect(state => {
+const selector = formValueSelector("FormPage2");
+
+FormPage2 = connect(state => {
   const targetStrength = selector(state, "targetStrength");
   return {
-    targetStrength
+    targetStrength: targetStrength
   };
-})(SelectingFormValuesForm);
+})(FormPage2);
 
-export default SelectingFormValuesForm;
+export default FormPage2

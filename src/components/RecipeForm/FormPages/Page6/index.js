@@ -19,7 +19,7 @@ const info = (pgContent, vgContent) => {
   )
 };
 
-const FormPage = props => {
+let FormPage6 = props => {
   const {
     handleSubmit,
     targetStrength,
@@ -37,9 +37,8 @@ const FormPage = props => {
     flavours,
     batchSize
   );
-
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit} >
       <Header />
       {info(formatNumber(pgContent, 2), formatNumber(vgContent, 2))}
       <Field
@@ -47,8 +46,8 @@ const FormPage = props => {
         component={RenderPgVgRatioRange}
         label="Target PG/VG Ratio"
         type="range"
-        min={pgContent}
-        max={(100 - vgContent)}
+        min={Math.round(pgContent)}
+        max={(Math.round(100 - vgContent))}
         pgVgRatio={pgVgRatio}
         parse={Number}
       />
@@ -60,40 +59,18 @@ const FormPage = props => {
   );
 };
 
-let SelectingFormValuesForm = reduxForm({
-  form: "wizard",
+FormPage6 = reduxForm({
+  form: "FormPage6",
   destroyOnUnmount: false,
-  forceUnregisterOnUnmount: true,
-  onSubmitSuccess: (result, dispatch, props) => {
-  }
-})(FormPage);
+})(FormPage6);
 
-const selector = formValueSelector("wizard");
-SelectingFormValuesForm = connect(state => {
-  const {
-    batchSize,
-    targetStrength,
-    baseStrength,
-    nicotineBaseLiquid,
-    flavours,
-    pgVgRatio
-  } = selector(
-    state,
-    "batchSize",
-    "targetStrength",
-    "baseStrength",
-    "nicotineBaseLiquid",
-    "flavours",
-    "pgVgRatio"
-  );
+const selector = formValueSelector("FormPage6");
+
+FormPage6 = connect((state, ownProps) => {
+  const pgVgRatio = selector(state, "pgVgRatio");
   return {
-    batchSize,
-    targetStrength,
-    baseStrength,
-    nicotineBaseLiquid,
-    flavours,
     pgVgRatio
   };
-})(SelectingFormValuesForm);
+})(FormPage6);
 
-export default SelectingFormValuesForm;
+export default FormPage6;

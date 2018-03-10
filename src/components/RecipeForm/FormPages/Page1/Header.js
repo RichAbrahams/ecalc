@@ -13,6 +13,7 @@ const Div = styled.div`
   grid-column: 1/13;
   grid-row: 1/2;
   display: flex;
+  margin-bottom: 3rem;
 `;
 
 export default () => {
@@ -20,7 +21,7 @@ export default () => {
     <Div>
       <Header>Quantity Of E-Liquid To Make
       <Popup
-        trigger={<Icon name="question circle" style={{ fontSize: "1rem"}}/>}
+        trigger={<Icon name="question circle" style={{ fontSize: "1rem", transform: "translate(6px, -7px"}}/>}
         content="The total quantity of e-liquid that you wish to make expressed in millilitres."
         inverted
       />

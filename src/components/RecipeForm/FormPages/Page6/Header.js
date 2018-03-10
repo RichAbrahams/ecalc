@@ -20,7 +20,7 @@ export default () => {
     <Div>
       <Header>Desired Final PG/VG Ratio</Header>
       <Popup
-        trigger={<Icon name="question circle" />}
+        trigger={<Icon name="question circle" style={{ fontSize: "1rem", transform: "translate(4px, 1px"}}/>}
         content="The desired final PG/VG ration of your e-liquid.  The min/max values are capped using the nicotine base and flavoring information provided on previous pages."
         inverted
       />

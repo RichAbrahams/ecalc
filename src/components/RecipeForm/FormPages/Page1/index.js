@@ -5,6 +5,7 @@ import NextButton from './NextButton';
 import Header from './Header'
 import ButtonWrapper from "../sharedComponents/ButtonWrapperRight";
 import Form from '../sharedComponents/Form';
+import { connect } from 'react-redux';
 
 const validate = (values) => {
   const errors = {}
@@ -14,7 +15,7 @@ const validate = (values) => {
   return errors
 }
 
-const FormPage = props => {
+let FormPage1 = props => {
   const { handleSubmit } = props;
 
   return (
@@ -29,7 +30,7 @@ const FormPage = props => {
         type="number"
         min="0"
         step="1"
-        parse={ value => (value && Number(value)) || ""}
+        parse={Number}
       />
       <ButtonWrapper>
         <NextButton />
@@ -38,17 +39,17 @@ const FormPage = props => {
   );
 };
 
-export default reduxForm({
-  form: "wizard", // <------ same form name
+FormPage1 = reduxForm({
+  form: 'FormPage1',
   validate,
-  destroyOnUnmount: false, // <------ preserve form data
-  forceUnregisterOnUnmount: true, // <------ unregister fields on unmount
-  enableReinitialize: true,
-  initialValues: {
-    pgVgRatio: 50,
-    targetStrength: 18,
-    baseStrength: 72,
-    nicotineBaseLiquid: "PG",
-    flavours: [],
-  }
-})(FormPage);
+})(FormPage1)
+
+FormPage1 = connect(
+  state => ({
+    initialValues: {
+      batchSize: state.formData.batchSize
+    }
+  })
+)(FormPage1)
+
+export default FormPage1

@@ -8,7 +8,7 @@ import Header from "./Header";
 import ButtonWrapper from "../sharedComponents/ButtonWrapper";
 import Form from "../sharedComponents/Form";
 
-const FormPage = props => {
+let FormPage3 = props => {
   const { handleSubmit, baseStrength, targetStrength } = props;
   return (
     <Form onSubmit={handleSubmit}>
@@ -26,7 +26,7 @@ const FormPage = props => {
         baseStrength={baseStrength}
         parse={Number}
       />
-      <ButtonWrapper style={{ marginTop: "5rem"}}>
+      <ButtonWrapper style={{ marginTop: "5rem" }}>
         <BackButton {...props} />
         <NextButton />
       </ButtonWrapper>
@@ -34,23 +34,21 @@ const FormPage = props => {
   );
 };
 
-let SelectingFormValuesForm = reduxForm({
-  form: "wizard", // <------ same form name
-  destroyOnUnmount: false, // <------ preserve form data
-  forceUnregisterOnUnmount: true // <------ unregister fields on unmount
-})(FormPage);
+FormPage3 = reduxForm({
+  form: "FormPage3",
+  destroyOnUnmount: false,
+  initialValues: {
+    baseStrength: 72
+  }
+})(FormPage3);
 
-const selector = formValueSelector("wizard"); // <-- same as form name
-SelectingFormValuesForm = connect(state => {
-  const { baseStrength, targetStrength } = selector(
-    state,
-    "baseStrength",
-    "targetStrength"
-  );
+const selector = formValueSelector("FormPage3");
+
+FormPage3 = connect(state => {
+  const baseStrength = selector(state, "baseStrength");
   return {
-    baseStrength,
-    targetStrength
+    baseStrength: baseStrength
   };
-})(SelectingFormValuesForm);
+})(FormPage3);
 
-export default SelectingFormValuesForm;
+export default FormPage3;

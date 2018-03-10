@@ -20,7 +20,7 @@ export default () => {
     <Div>
       <Header>Desired Nicotine Strength</Header>
       <Popup
-        trigger={<Icon name="question circle" />}
+        trigger={<Icon name="question circle" style={{ fontSize: "1rem", transform: "translate(4px, 1px"}}/>}
         content="The desired nicotine strength of your finished e-liquid."
         inverted
       />

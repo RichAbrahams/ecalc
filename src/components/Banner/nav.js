@@ -13,7 +13,7 @@ const Wrapper = styled.div`
     grid-column-end: 3;
   }
   @media screen and (min-width: 1000px) {
-    grid-column-start: 3;
+    grid-column-start: 2;
   }
 `
 const Inner = styled.div`

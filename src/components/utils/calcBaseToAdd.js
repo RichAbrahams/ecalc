@@ -1,7 +1,8 @@
 
 
 const baseToAdd = (baseStrength, targetStrength, batchSize) => {
-  return (targetStrength / baseStrength) * batchSize;
+  const result = targetStrength > 0 ? (targetStrength / baseStrength) * batchSize : 0;
+  return result;
 }
 
 export default baseToAdd;

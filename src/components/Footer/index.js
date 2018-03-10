@@ -5,11 +5,10 @@ import { Link } from 'react-router-dom';
 const Wrapper = styled.div`
   display: flex;
   justify-content: flex-end;
-  padding: 1rem;
+  padding: 2rem;
+  background: rgba(33,143,208,1);
   color: white;
-  background: #2185d0;
-`;
-
+`
 const A = styled(Link)`
   color: white;
   text-decoration: none;

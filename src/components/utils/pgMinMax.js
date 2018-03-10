@@ -1,5 +1,5 @@
-import baseToAdd from "../../../utils/calcBaseToAdd";
-import mlToPercent from "../../../utils/mlToPercent";
+import baseToAdd from './calcBaseToAdd';
+import mlToPercent from './mlToPercent';
 
 const pgMinMax = (
   targetStrength,
@@ -10,10 +10,8 @@ const pgMinMax = (
 ) => {
   let pgContent = 0;
   let vgContent = 0;
-
   const baseML = baseToAdd(baseStrength, targetStrength, batchSize);
   const basePercent = mlToPercent(baseML, batchSize);
-
   if (nicotineBaseLiquid === "PG") {
     pgContent += basePercent;
   } else {
@@ -30,5 +28,6 @@ const pgMinMax = (
   }
   return [pgContent, vgContent];
 };
+
 
 export default pgMinMax;

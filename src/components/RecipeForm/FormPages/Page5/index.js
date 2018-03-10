@@ -8,11 +8,11 @@ import RenderFlavours from "./RenderFlavours";
 import baseToAdd from "../../../utils/calcBaseToAdd";
 import ButtonWrapper from "../sharedComponents/ButtonWrapper";
 import Form from "../sharedComponents/Form";
-import formatNumber from '../../../utils/formatNumber';
-import { Message } from 'semantic-ui-react'
+import formatNumber from "../../../utils/formatNumber";
+import { Message } from "semantic-ui-react";
 
-const validate = values => {
-  const { flavours, baseStrength, targetStrength, batchSize } = values;
+const validate = (values, props) => {
+  const { baseStrength, targetStrength, batchSize } = props;
   const errors = {};
   if (values.flavours) {
     const flavoursArrayErrors = [];
@@ -26,9 +26,15 @@ const validate = values => {
         flavourErrors.percentage = "Please enter flavor percentage";
         flavoursArrayErrors[flavourIndex] = flavourErrors;
       }
-      const { remaining } = checkRemaining(flavours, baseStrength, targetStrength, batchSize);
-      if (remaining < 0 ) {
-        flavourErrors.percentage = "Total percentage of flavorings is too high.";
+      const { remaining } = checkRemaining(
+        values.flavours,
+        baseStrength,
+        targetStrength,
+        batchSize
+      );
+      if (remaining < 0) {
+        flavourErrors.percentage =
+          "Total percentage of flavorings is too high.";
         flavoursArrayErrors[flavourIndex] = flavourErrors;
       }
     });
@@ -39,7 +45,12 @@ const validate = values => {
   return errors;
 };
 
-const checkRemaining = (flavours = [], baseStrength, targetStrength, batchSize) => {
+const checkRemaining = (
+  flavours = [],
+  baseStrength,
+  targetStrength,
+  batchSize
+) => {
   const baseAdded = baseToAdd(baseStrength, targetStrength, batchSize);
   const basePercent = 100 / batchSize * baseAdded;
   const flavoursAdded = flavours.reduce((total, flavour) => {
@@ -48,7 +59,7 @@ const checkRemaining = (flavours = [], baseStrength, targetStrength, batchSize) 
   return {
     basePercent: formatNumber(basePercent, 0),
     flavoursAdded: formatNumber(flavoursAdded, 0),
-    remaining: formatNumber((100 - (basePercent + flavoursAdded)), 0)
+    remaining: formatNumber(100 - (basePercent + flavoursAdded), 0)
   };
 };
 
@@ -56,19 +67,22 @@ const info = (basePercent, flavoursAdded, remaining) => {
   if (remaining >= 0) {
     return (
       <Message info>
-      <p>{`${basePercent}% of your liquid is nicotine base.  You can add up to ${100 - basePercent}% of flavoring.`}</p>
-     </Message>
+        <p
+        >{`${basePercent}% of your liquid is nicotine base.  You can add up to ${100 -
+          basePercent}% of flavoring.`}</p>
+      </Message>
     );
   } else {
     return (
       <Message warning>
-      <p>{`The flavoring and nicotine ratios entered do not produce a valid recipe.  Please reduce the percentage of flavorings or the nicotine base content.`}</p>
+        <p
+        >{`The flavoring and nicotine ratios entered do not produce a valid recipe.  Please reduce the percentage of flavorings or the nicotine base content.`}</p>
       </Message>
     );
   }
 };
 
-const FormPage = props => {
+let FormPage5 = props => {
   const {
     handleSubmit,
     flavours,
@@ -101,28 +115,22 @@ const FormPage = props => {
   );
 };
 
-let SelectingFormValuesForm = reduxForm({
-  form: "wizard", // <------ same form name
+FormPage5 = reduxForm({
+  form: "FormPage5",
+  destroyOnUnmount: false,
   validate,
-  destroyOnUnmount: false, // <------ preserve form data
-  forceUnregisterOnUnmount: true // <------ unregister fields on unmount
-})(FormPage);
+  initialValues: {
+    flavours: []
+  }
+})(FormPage5);
 
-const selector = formValueSelector("wizard"); // <-- same as form name
-SelectingFormValuesForm = connect(state => {
-  const { flavours, baseStrength, targetStrength, batchSize } = selector(
-    state,
-    "flavours",
-    "baseStrength",
-    "targetStrength",
-    "batchSize"
-  );
+const selector = formValueSelector("FormPage5");
+
+FormPage5 = connect(state => {
+  const flavours = selector(state, "flavours");
   return {
-    flavours,
-    baseStrength,
-    targetStrength,
-    batchSize
+    flavours
   };
-})(SelectingFormValuesForm);
+})(FormPage5);
 
-export default SelectingFormValuesForm;
+export default FormPage5;

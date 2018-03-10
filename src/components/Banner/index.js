@@ -10,29 +10,38 @@ import Description from './Description';
 const OuterWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  grid-row-gap: 2rem;
+  grid-row-gap: 3rem;
   padding: 1rem 2rem 1rem 2rem;
-  background: #2185d0;
+  background: rgba(33,143,208,1);
   color: white;
   @media screen and (min-width: 700px) {
-    grid-template-columns: 1fr 1fr;
-  }
-  @media screen and (min-width: 1000px) {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 `;
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media screen and (min-width: 1000px) {
+    align-items: flex-start;
+  }
+`
 
 export class Banner extends Component {
 
   resetPage(e) {
+    this.props.resetRecipeState();
     this.props.setPage(1);
   };
 
 render() {
   return (
     <OuterWrapper>
+      <Wrapper>
       <SiteName>E-LIQUID WIZARD</SiteName>
-      <Description>Easy E-liquid calculations with print and save.</Description>
+      <Description />
+      </Wrapper>
       <Nav resetPage={(e) => this.resetPage(e)}/>
     </OuterWrapper>
   )
@@ -41,7 +50,7 @@ render() {
 
 const mapDispatchToProps = dispatch => ({
   setPage: payload => dispatch(actions.setPage(payload)),
-  destroyForm: () => dispatch(destroy('wizard'))
+  resetRecipeState: () => dispatch(actions.resetRecipeState())
 
 });
 
