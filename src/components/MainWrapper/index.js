@@ -18,7 +18,7 @@ flex-direction: column;
 align-items: center;
 width: 100%;
 @media screen and (min-width: 786px) {
-  padding: 1em 2em 5em 2em;
+  padding: 1em 3em 5em 3em;
 }
 @media screen and (min-width: 991px) {
   width: 826px;
