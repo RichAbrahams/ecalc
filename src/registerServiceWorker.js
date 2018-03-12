@@ -41,7 +41,6 @@ export default function register() {
       }
     });
   } else {
-    console.log('sw not registered');
     console.log('dev env:', process.env.NODE_ENV);
   }
 }
@@ -50,7 +49,6 @@ function registerValidSW(swUrl) {
   navigator.serviceWorker
     .register(swUrl)
     .then(registration => {
-      console.log('sw registered');
       registration.onupdatefound = () => {
         const installingWorker = registration.installing;
         installingWorker.onstatechange = () => {

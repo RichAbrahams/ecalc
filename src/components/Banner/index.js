@@ -4,7 +4,6 @@ import SiteName from './SiteName';
 import Nav from './nav';
 import styled from 'styled-components';
 import * as actions from "../../actions";
-import { destroy } from 'redux-form';
 import Description from './Description';
 
 const OuterWrapper = styled.div`
