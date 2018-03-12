@@ -59,14 +59,14 @@ export class componentName extends Component {
         { showSavedModal && <SaveModal { ...this.props } /> }
         <Header style={ { marginTop: '5rem' } }>Finished Recipe{ name && `: ${name}` }</Header>
         { this.props.recipe && <Fragment>
-          <Table celled unstackable={ true } style={ { maxWidth: '700px' } }>
+          <Table celled unstackable={ true } style={ { maxWidth: '700px', fontSize: '0.8em' } }>
             <Table.Header>
               <Table.Row>
                 <Table.HeaderCell>Ingredient</Table.HeaderCell>
                 <Table.HeaderCell>ml</Table.HeaderCell>
                 <Table.HeaderCell>Drops</Table.HeaderCell>
                 <Table.HeaderCell>Grams</Table.HeaderCell>
-                <Table.HeaderCell>Percentage</Table.HeaderCell>
+                <Table.HeaderCell>Percent</Table.HeaderCell>
               </Table.Row>
             </Table.Header>
             <Table.Body>

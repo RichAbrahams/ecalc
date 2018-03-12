@@ -11,7 +11,7 @@ const OuterWrapper = styled.div`
 
 const Wrapper = styled.div`
 background: white;
-padding: 1em 2em 5em 2em;
+padding: 1em 1em 5em 1em;
 display: flex;
 flex-grow: 1;
 flex-direction: column;
