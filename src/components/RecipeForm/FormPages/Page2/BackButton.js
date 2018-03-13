@@ -7,6 +7,7 @@ export default ({ setPage }) => {
        labelPosition="left"
        icon="left chevron"
        content="Previous"
+       type='button'
        onClick={() => setPage(1)}
      />
   );

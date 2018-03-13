@@ -23,6 +23,7 @@ const toRender = props => {
     submitForm5,
     submitForm6
   } = props;
+
   return [
     <Page1 key={1} {...props} onSubmit={payload => submitForm1(payload)} />,
     <Page2 key={2} {...props} onSubmit={payload => submitForm2(payload)} />,

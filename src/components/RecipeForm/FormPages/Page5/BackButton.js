@@ -15,7 +15,11 @@ export default ({ setPage, targetStrength }) => {
       labelPosition="left"
       icon="left chevron"
       content="Previous"
-      onClick={() => handleBackButton(setPage, targetStrength)}
+      onClick={(e) => {
+        // e.preventDefault();
+        handleBackButton(setPage, targetStrength)
+      }}
+      type="button"
     />
   );
 };

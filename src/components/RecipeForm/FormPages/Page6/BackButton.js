@@ -8,6 +8,7 @@ export default ({ setPage }) => {
        icon="left chevron"
        content="Previous"
        onClick={() => setPage(5)}
+       type='button'
      />
   );
 };
