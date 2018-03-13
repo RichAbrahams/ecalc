@@ -10,9 +10,8 @@ const Icon = styled(IconImp)`
 `;
 
 const Div = styled.div`
-  grid-column: 1/13;
-  grid-row: 1/2;
   display: flex;
+  flex: 1;
 `;
 
 export default () => {

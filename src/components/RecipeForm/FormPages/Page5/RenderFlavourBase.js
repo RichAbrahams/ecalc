@@ -3,8 +3,7 @@ import styled from "styled-components";
 import { Header, Button } from "semantic-ui-react";
 
 const Wrapper = styled.div`
-  grid-column: 1/2;
-  grid-row: 3/4;
+  margin-top: 1em;
 `;
 
 const ButtonWrapper = styled.div`

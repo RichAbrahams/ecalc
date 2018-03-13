@@ -3,9 +3,7 @@ import styled from "styled-components";
 import { Label } from "semantic-ui-react";
 
 const Wrapper = styled.div`
-  grid-column: 2/3;
-  grid-row: 1/3;
-  justify-self: flex-end;
+  display: flex;
   &:hover {
     cursor: pointer;
   }

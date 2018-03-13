@@ -9,7 +9,6 @@ const stc = styled.div`
   & > button {
     margin-bottom: 1em !important;
   }
-
   @media screen and (min-width: 480px) {
     flex-direction: row;
     margin-top: 2rem;

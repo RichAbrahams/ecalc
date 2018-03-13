@@ -2,29 +2,40 @@ import React from "react";
 import { Header } from "semantic-ui-react";
 import { Input as InputImp, Label } from "semantic-ui-react";
 import styled from "styled-components";
+import RemoveFlavour from "./RemoveFlavour";
 
 const Input = styled(InputImp)`
-  width: 100%;
 `;
 
 const Wrapper = styled.div`
-  grid-column: 1/2;
-  grid-row: 1/2;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2em;
 `;
+
+const HeaderWrapper = styled.div`
+  display: flex;
+`
 
 const renderInput = ({
   input,
   label,
   type,
   placeholder,
-  meta: { touched, error }
+  meta: { touched, error },
+  remove
 }) => {
   const err = touched && error;
   return (
     <Wrapper>
-      <Header size="small" floated="left">
-        {label}
-      </Header>
+      <HeaderWrapper>
+        <Header size="small" floated="left" style={{ flex: 1 }}>
+          {label}
+        </Header>
+        <div>
+          <RemoveFlavour remove={remove}/>
+        </div>
+      </HeaderWrapper>
       <Input
         {...input}
         type={type}

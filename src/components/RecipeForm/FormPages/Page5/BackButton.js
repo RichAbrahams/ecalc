@@ -11,11 +11,11 @@ const handleBackButton = (setPage, targetStrength) => {
 
 export default ({ setPage, targetStrength }) => {
   return (
-       <Button
-       labelPosition="left"
-       icon="left chevron"
-       content="Previous"
-       onClick={() => handleBackButton(setPage, targetStrength)}
-     />
+    <Button
+      labelPosition="left"
+      icon="left chevron"
+      content="Previous"
+      onClick={() => handleBackButton(setPage, targetStrength)}
+    />
   );
 };

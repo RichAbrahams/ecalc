@@ -8,8 +8,7 @@ const Input = styled(InputImp)`
 `;
 
 const Wrapper = styled.div`
-  grid-column: 1/2;
-  grid-row: 2/3;
+  margin-top: 1em;
 `;
 
 const renderInput = ({ input, label, type, remaining, meta: { touched, error } }) => {
