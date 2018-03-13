@@ -24,7 +24,6 @@ ReactDOM.render(
         content="E-liquid, E-Juice, eliquid, ejuice, calculator, save, print, e-cigarette"
       />
       <meta property="og:title" content="E-Liquid Wizard" />
-      <meta name="google-site-verification" content="xj270qaRjIgmWouIZDqbSOnmu4WZ2AO1S6isyTgUzLU" />
     </Helmet>
     <Provider store={store}>
       <BrowserRouter>
