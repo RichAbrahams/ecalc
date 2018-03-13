@@ -18,6 +18,7 @@ const ButtonWrapper = styled.div`
   margin-top: 1rem;
   width: 100%;
   flex-direction: column-reverse;
+  max-width: 700px;
   & > button {
     margin-bottom: 1em !important;
   }
