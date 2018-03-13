@@ -5,6 +5,7 @@ import PrintTab from "./components/RecipeResults/PrintTab";
 import Footer from "./components/Footer";
 import Loading from "./components/Loading";
 import Loadable from "react-loadable";
+import 'semantic-ui-css/semantic.min.css';
 
 const LoadableRecipeForm = Loadable({
   loader: () => import("./components/RecipeForm"),
