@@ -1,5 +1,5 @@
 import React from "react";
-import { Button  } from "semantic-ui-react";
+import { Button } from "semantic-ui-react";
 
 export default () => {
   return (
@@ -9,6 +9,7 @@ export default () => {
       content="Next"
       primary
       type="submit"
+      size="large"
     />
   );
 };

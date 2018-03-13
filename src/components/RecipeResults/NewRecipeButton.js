@@ -8,6 +8,7 @@ export default ({newRecipe}) => {
       primary
       type="button"
       onClick={newRecipe}
+      size="large"
     />
   );
 };

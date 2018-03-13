@@ -9,6 +9,7 @@ export default () => {
       content="Finish"
       primary
       type="submit"
+      size="large"
     />
   );
 };

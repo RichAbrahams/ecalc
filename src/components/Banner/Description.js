@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
   display: flex;
   text-align: center;
-  font-size: 0.8em;
+  font-size: 1em;
   @media screen and (min-width: 786px) {
   font-size: 1em;
 }
@@ -12,7 +12,7 @@ const Wrapper = styled.div`
 export default () => {
   return (
     <Wrapper>
-      <p>Easy saveable, printable E-Liquid calculations</p>
+      <p>Easy E-Liquid calculations with save and print</p>
     </Wrapper>
   )
 }

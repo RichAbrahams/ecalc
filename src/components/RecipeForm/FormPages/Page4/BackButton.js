@@ -9,6 +9,7 @@ export default ({ setPage }) => {
       content="Previous"
       onClick={() => setPage(3)}
       type="button"
+      size="large"
     />
   );
 };

@@ -18,7 +18,7 @@ const renderInput = props => {
         step={props.step || null}
       />
       {err && (
-        <Label basic color="red" pointing>
+        <Label basic color="red" pointing size="large">
           {props.meta.error}
         </Label>
       )}

@@ -5,11 +5,13 @@ export default ({ newPrintTab }) => {
   return (
     <Button
       icon
-      labelPosition='right'
+      labelPosition="right"
       primary
       type="button"
-      onClick={ newPrintTab }
-    >Print<Icon name='print' />
+      onClick={newPrintTab}
+      size="large"
+    >
+      Print<Icon name="print" />
     </Button>
   );
 };

@@ -30,6 +30,7 @@ export default ({ add }) => {
         content="Add Flavor"
         onClick={ add }
         type="button"
+        size="large"
       />
     </Wrapper>
   );

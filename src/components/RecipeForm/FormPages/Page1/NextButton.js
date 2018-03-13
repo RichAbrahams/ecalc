@@ -17,6 +17,7 @@ export default () => {
       content="Next"
       primary
       type="submit"
+      size='large'
     />
   );
 };

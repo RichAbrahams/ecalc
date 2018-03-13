@@ -1,13 +1,16 @@
-import React from 'react'
-import { Button, Icon } from 'semantic-ui-react';
+import React from "react";
+import { Button, Icon } from "semantic-ui-react";
 
 export default ({ toggleModal }) => {
   return (
     <Button
       icon
-      labelPosition='right'
+      labelPosition="right"
       primary
-      onClick={ toggleModal }
-    >Save<Icon name='save' /></Button>
-  )
-}
+      onClick={toggleModal}
+      size="large"
+    >
+      Save<Icon name="save" />
+    </Button>
+  );
+};

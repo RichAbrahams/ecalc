@@ -78,7 +78,6 @@ export class componentName extends Component {
             <Table
               celled
               unstackable={true}
-              style={{ maxWidth: "420px", fontSize: "0.8em" }}
             >
               <Table.Header>
                 <Table.Row>
