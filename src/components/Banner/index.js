@@ -42,8 +42,7 @@ export class Banner extends Component {
     return (
       <OuterWrapper>
         <Wrapper>
-        <LogoBig />
-        <LogoSmall />
+        <SiteName />
         </Wrapper>
         <Nav resetPage={e => this.resetPage(e)} />
       </OuterWrapper>
