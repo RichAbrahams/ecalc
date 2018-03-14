@@ -3,7 +3,7 @@ import { Icon } from "semantic-ui-react";
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
+const Nav = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,8 +27,8 @@ const Inner = styled.div`
 const Span = styled.span`
   margin: 0;
 `
-const Nav = ({ resetPage }) => (
-  <Wrapper>
+const Navigation = ({ resetPage }) => (
+  <Nav>
     <Link to="/" onClick={ resetPage }>
       <Inner>
         <Icon name="add" size="large" />
@@ -45,9 +45,9 @@ const Nav = ({ resetPage }) => (
         </Span>
       </Inner>
     </Link>
-  </Wrapper>
+  </Nav>
 
 );
 
 
-export default Nav;
+export default Navigation;

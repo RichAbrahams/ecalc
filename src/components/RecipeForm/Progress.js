@@ -3,7 +3,7 @@ import { Progress } from 'semantic-ui-react'
 
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
+const Wrapper = styled.figure`
   width: 100%;
   display: flex;
   justify-content: flex-start;
