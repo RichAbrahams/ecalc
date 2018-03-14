@@ -3,7 +3,8 @@ import React from "react";
 import styled from "styled-components";
 
 const Icon = styled(IconImp)`
-  transform: translate(2px, 0px);
+  transform: translate(2px, -1px);
+  font-size: 1rem;
   &:hover {
     color: green;
   }
@@ -20,7 +21,7 @@ export default () => {
     <Div>
       <Header>Nicotine Base Strength</Header>
       <Popup
-        trigger={<Icon name="question circle" style={{ fontSize: "1rem", transform: "translate(4px, 1px"}}/>}
+        trigger={<Icon name="question circle" />}
         content="The nicotine strength of your nicotine base liquid."
         inverted
       />

@@ -3,7 +3,8 @@ import React from "react";
 import styled from "styled-components";
 
 const Icon = styled(IconImp)`
-  transform: translate(2px, 0px);
+  transform: translate(2px, -1px);
+  font-size: 1rem;
   &:hover {
     color: green;
   }
@@ -18,7 +19,7 @@ export default () => {
     <Div>
       <Header>Flavorings</Header>
       <Popup
-        trigger={<Icon name="question circle" style={{ fontSize: "1rem", transform: "translate(4px, 1px"}}/>}
+        trigger={<Icon name="question circle" />}
         content="Flavorings that you wish to add to your e-liquid.  For each flavoring please add a flavor name, the percentage required and whether the flavoring is PG or VG based."
         inverted
       />

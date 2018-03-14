@@ -22,11 +22,15 @@ const Inner = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 0rem 1rem 0rem 1rem;
+  &:hover {
+    color:  #b5cc18;
+  }
 `;
 
 const Span = styled.span`
   margin: 0;
 `
+
 const Navigation = ({ resetPage }) => (
   <Nav>
     <Link to="/" onClick={ resetPage }>

@@ -12,6 +12,7 @@ import { destroy } from "redux-form";
 import MainWrapper from "../MainWrapper";
 import Progress from "./Progress";
 import pgMinMax from "../utils/pgMinMax";
+import Welcome from './Welcome';
 
 const toRender = props => {
   const {
@@ -72,10 +73,13 @@ export class RecipeForm extends Component {
 
   render() {
     return (
-      <MainWrapper>
-        <Progress {...this.props} />
-        {toRender(this.props)}
-      </MainWrapper>
+      <React.Fragment>
+          { this.props.currentPage === 1 && <Welcome />}
+        <MainWrapper>
+          <Progress {...this.props} />
+          {toRender(this.props)}
+        </MainWrapper>
+      </React.Fragment>
     );
   }
 }

@@ -13,7 +13,7 @@ const Header = styled.header`
   grid-template-columns: 1fr;
   grid-row-gap: 1rem;
   padding: 1rem 1rem 1rem 1rem;
-  background: rgba(33, 143, 208, 1);
+  background: #1B1C1D;
   color: white;
   @media screen and (min-width: 480px) {
     grid-row-gap: 3rem;
