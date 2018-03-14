@@ -17,7 +17,6 @@ const H1 = styled.h1`
   text-align: center;
   @media screen and (min-width: 480px) {
     font-size: 48px;
-
   }
   @media screen and (min-width: 1000px) {
     text-align: left;
