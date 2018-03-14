@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import React from 'react'
 
-const OuterWrapper = styled.div`
+const OuterWrapper = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,7 +9,7 @@ const OuterWrapper = styled.div`
   flex-grow: 1;
 `;
 
-const Wrapper = styled.div`
+const Wrapper = styled.section`
 background: white;
 padding: 1em 1em 5em 1em;
 display: flex;
