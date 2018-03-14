@@ -8,7 +8,7 @@ import Description from "./Description";
 import LogoBig from './LogoBig';
 import LogoSmall from './LogoSmall';
 
-const Header = styled.header`
+const OuterWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-row-gap: 1rem;
@@ -40,12 +40,12 @@ export class Banner extends Component {
 
   render() {
     return (
-      <Header>
+      <OuterWrapper>
         <Wrapper>
         <SiteName />
         </Wrapper>
         <Nav resetPage={e => this.resetPage(e)} />
-      </Header>
+      </OuterWrapper>
     );
   }
 }
