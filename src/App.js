@@ -36,7 +36,7 @@ class App extends Component {
           <Route path="/">
             <Fragment>
               <Banner />
-              <Route exact path="/" component={Loading} />
+              <Route exact path="/" component={LoadableRecipeForm} />
               <Route path="/reciperesults" component={LoadableRecipeResults} />
               <Route path="/savedrecipes" component={LoadableSavedRecipes} />
               <Route path="/terms" component={LoadableTerms} />
