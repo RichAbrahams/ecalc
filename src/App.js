@@ -5,7 +5,6 @@ import Banner from "./components/Banner";
 import PrintTab from "./components/RecipeResults/PrintTab";
 import Footer from "./components/Footer";
 import Loading from "./components/Loading";
-import FrontLoader from "./components/FrontLoader";
 
 import 'semantic-ui-css/semantic.min.css';
 
@@ -38,8 +37,7 @@ class App extends Component {
           <Route path="/">
             <Fragment>
               <Banner />
-              <Route exact path="/" component={FrontLoader} />
-              <Route exact path="/newrecipe" component={LoadableRecipeForm} />
+              <Route exact path="/" component={LoadableRecipeForm} />
               <Route path="/reciperesults" component={LoadableRecipeResults} />
               <Route path="/savedrecipes" component={LoadableSavedRecipes} />
               <Route path="/terms" component={LoadableTerms} />
