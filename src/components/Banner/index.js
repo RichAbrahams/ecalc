@@ -4,9 +4,6 @@ import SiteName from "./SiteName";
 import Nav from "./nav";
 import styled from "styled-components";
 import * as actions from "../../actions";
-import Description from "./Description";
-import LogoBig from './LogoBig';
-import LogoSmall from './LogoSmall';
 
 const Header = styled.header`
   display: grid;

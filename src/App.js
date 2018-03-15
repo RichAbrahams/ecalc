@@ -1,10 +1,12 @@
 import React, { Component, Fragment } from "react";
 import { Route, Switch } from "react-router-dom";
+import Loadable from "react-loadable";
 import Banner from "./components/Banner";
 import PrintTab from "./components/RecipeResults/PrintTab";
 import Footer from "./components/Footer";
 import Loading from "./components/Loading";
-import Loadable from "react-loadable";
+import FrontLoader from "./components/FrontLoader";
+
 import 'semantic-ui-css/semantic.min.css';
 
 const LoadableRecipeForm = Loadable({
@@ -36,7 +38,8 @@ class App extends Component {
           <Route path="/">
             <Fragment>
               <Banner />
-              <Route exact path="/" component={LoadableRecipeForm} />
+              <Route exact path="/" component={FrontLoader} />
+              <Route exact path="/newrecipe" component={LoadableRecipeForm} />
               <Route path="/reciperesults" component={LoadableRecipeResults} />
               <Route path="/savedrecipes" component={LoadableSavedRecipes} />
               <Route path="/terms" component={LoadableTerms} />

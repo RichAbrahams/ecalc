@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Loader } from "semantic-ui-react";
 import styled, { keyframes } from "styled-components";
 
 const Wrapper = styled.div`
@@ -18,7 +17,6 @@ const rotate360 = keyframes`
     transform: rotate(360deg);
   }
 `;
-
 
 const SpinOuter = styled.div`
   display: inline-block;

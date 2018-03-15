@@ -10,7 +10,7 @@ const Wrapper = styled.div`
 
 const H1 = styled.h1`
   font-size: 36px;
-  font-family: 'Oswald', sans-serif;
+  font-family: Lato,Helvetica Neue,Arial,Helvetica,sans-serif;
   color: white;
   line-height: 1.2em;
   margin-bottom: 7px;
@@ -24,7 +24,7 @@ const H1 = styled.h1`
 `;
 
 const H4 = styled.h4`
-  font-family: 'Oswald', sans-serif;
+  font-family: Lato,Helvetica Neue,Arial,Helvetica,sans-serif;
   color: white;
   margin-top: 0;
   text-align: center;

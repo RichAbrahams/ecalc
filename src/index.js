@@ -21,7 +21,7 @@ ReactDOM.render(
       />
       <meta
         name="keywords"
-        content="E-liquid, E-Juice, eliquid, ejuice, calculator, save, print, e-cigarette"
+        content="eliquid calculator, e-liquid calculator, e-liquid, e-Juice, eliquid, ejuice, calculator, save, print, e-cigarette, vape"
       />
       <meta property="og:title" content="E-Liquid Wizard" />
     </Helmet>
