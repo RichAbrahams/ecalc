@@ -30,7 +30,7 @@ export default () => {
   return (
     <Wrapper>
       <h2>Welcome to E-Liquid Wizard</h2>
-      <h3>Free e-liquid recipe calculator.&nbsp;&nbsp;&nbsp;Save to your device and print from pdf.</h3>
+      <h3>Free e-liquid recipe calculator.</h3>
     </Wrapper>
   )
 }
