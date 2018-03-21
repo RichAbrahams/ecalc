@@ -1,7 +1,7 @@
 import React from "react";
 import { Icon } from "semantic-ui-react";
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 const Nav = styled.nav`
   display: flex;
@@ -15,7 +15,7 @@ const Nav = styled.nav`
   @media screen and (min-width: 1000px) {
     grid-column-start: 2;
   }
-`
+`;
 const Inner = styled.div`
   color: white;
   display: flex;
@@ -23,35 +23,29 @@ const Inner = styled.div`
   align-items: center;
   margin: 0rem 1rem 0rem 1rem;
   &:hover {
-    color:  #b5cc18;
+    color: #b5cc18;
   }
 `;
 
 const Span = styled.span`
   margin: 0;
-`
+`;
 
 const Navigation = ({ resetPage }) => (
   <Nav>
-    <Link to="/" onClick={ resetPage }>
+    <Link to="/" onClick={resetPage}>
       <Inner>
         <Icon name="add" size="large" />
-        <Span>
-          New Recipe
-        </Span>
+        <Span>New Recipe</Span>
       </Inner>
     </Link>
     <Link to="savedrecipes">
       <Inner>
         <Icon name="save" size="large" />
-        <Span>
-        Saved Recipes
-        </Span>
+        <Span>Saved Recipes</Span>
       </Inner>
     </Link>
   </Nav>
-
 );
-
 
 export default Navigation;

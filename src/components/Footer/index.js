@@ -22,9 +22,6 @@ const Wrapper = styled.footer`
     color: #1e70bf;
     text-decoration: none;
 }
-
-
-  }
 `;
 
 const A = styled(Link)`
@@ -38,7 +35,9 @@ const A = styled(Link)`
 const Footer = () => (
   <Wrapper>
     <a href="mailto:webmaster@eliquidwizard.com">Contact</a>
-    <A to="/terms">Terms & Conditions</A>
+    <A to="/terms">
+      Terms & Conditions
+    </A>
   </Wrapper>
 );
 
