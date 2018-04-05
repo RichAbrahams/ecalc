@@ -1,21 +1,19 @@
-import React from 'react';
-import GoogleAnalytics from 'react-ga';
+import React from "react";
+import GoogleAnalytics from "react-ga";
 
-GoogleAnalytics.initialize('UA-115522927-1');
+GoogleAnalytics.initialize("UA-116999777-1");
 
-const withTracker = (WrappedComponent) => {
-  const trackPage = (page) => {
+const withTracker = WrappedComponent => {
+  const trackPage = page => {
     GoogleAnalytics.set({ page });
     GoogleAnalytics.pageview(page);
   };
 
-  const HOC = (props) => {
+  const HOC = props => {
     const page = props.location.pathname;
     trackPage(page);
 
-    return (
-      <WrappedComponent {...props} />
-    );
+    return <WrappedComponent {...props} />;
   };
 
   return HOC;
