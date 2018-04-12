@@ -10,7 +10,7 @@ const Header = styled.header`
   grid-template-columns: 1fr;
   grid-row-gap: 1rem;
   padding: 1rem 1rem 1rem 1rem;
-  background: #1B1C1D;
+  background: #2185d0;
   color: white;
   @media screen and (min-width: 480px) {
     grid-row-gap: 3rem;
@@ -39,7 +39,7 @@ export class Banner extends Component {
     return (
       <Header>
         <Wrapper>
-        <SiteName resetPage={e => this.resetPage(e)}/>
+          <SiteName resetPage={e => this.resetPage(e)} />
         </Wrapper>
         <Nav resetPage={e => this.resetPage(e)} />
       </Header>

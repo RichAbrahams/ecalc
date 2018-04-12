@@ -20,7 +20,7 @@ export default () => {
       <Header>Flavorings</Header>
       <Popup
         trigger={<Icon name="question circle" />}
-        content="Flavorings that you wish to add to your e-liquid.  For each flavoring please add a flavor name, the percentage required and whether the flavoring is PG or VG based."
+        content="Flavorings that you wish to add to your e-liquid.  For each flavoring please add a flavor name, the percentage required and the flavors base."
         inverted
       />
     </Div>

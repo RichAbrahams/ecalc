@@ -22,7 +22,7 @@ export default () => {
       <Header>Nicotine Base Diluent</Header>
       <Popup
         trigger={<Icon name="question circle" />}
-        content="The the diluent used in your nicotine base liquid.  This should be stated on the bottle label."
+        content="The diluent used in your nicotine base liquid.  This should be stated on the bottle label."
         inverted
       />
     </Div>

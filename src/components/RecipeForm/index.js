@@ -12,7 +12,7 @@ import { destroy } from "redux-form";
 import MainWrapper from "../MainWrapper";
 import Progress from "./Progress";
 import pgMinMax from "../utils/pgMinMax";
-import Welcome from './Welcome';
+import Welcome from "./Welcome";
 
 const toRender = props => {
   const {
@@ -39,24 +39,25 @@ const toRender = props => {
         history.push("/reciperesults");
       }}
       initialValues={{
-        pgVgRatio: props.pgVgRatio || pgMinMax(
+        pgVgRatio:
+          props.pgVgRatio ||
+          pgMinMax(
             props.targetStrength,
             props.baseStrength,
             props.nicotineBaseLiquid,
             props.flavours,
             props.batchSize
-        )[0]
-      }      }
+          )[0]
+      }}
     />
   ].filter((item, index) => props.currentPage - 1 === index);
 };
 
 export class RecipeForm extends Component {
-
   componentWillMount = () => {
     this.destroyAllForms();
     this.props.resetRecipeState();
-  }
+  };
   componentWillUnmount = () => {
     this.destroyAllForms();
     this.props.resetRecipeState();
@@ -69,12 +70,11 @@ export class RecipeForm extends Component {
     this.props.destroyForm("FormPage4");
     this.props.destroyForm("FormPage5");
     this.props.destroyForm("FormPage6");
-  }
+  };
 
   render() {
     return (
       <React.Fragment>
-          { this.props.currentPage === 1 && <Welcome />}
         <MainWrapper>
           <Progress {...this.props} />
           {toRender(this.props)}
@@ -108,7 +108,7 @@ const mapDispatchToProps = dispatch => ({
   submitForm5: payload => dispatch(actions.submitForm5(payload)),
   submitForm6: payload => dispatch(actions.submitForm6(payload)),
   destroyForm: payload => dispatch(destroy(payload)),
-  resetRecipeState: () => dispatch(actions.resetRecipeState()),
+  resetRecipeState: () => dispatch(actions.resetRecipeState())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(RecipeForm);
