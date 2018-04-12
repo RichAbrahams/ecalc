@@ -5,8 +5,9 @@ import Banner from "./components/Banner";
 import PrintTab from "./components/RecipeResults/PrintTab";
 import Footer from "./components/Footer";
 import Loading from "./components/Loading";
+import withTracker from "./PageTracker";
 
-import 'semantic-ui-css/semantic.min.css';
+import "semantic-ui-css/semantic.min.css";
 
 const LoadableRecipeForm = Loadable({
   loader: () => import("./components/RecipeForm"),
@@ -37,10 +38,20 @@ class App extends Component {
           <Route path="/">
             <Fragment>
               <Banner />
-              <Route exact path="/" component={LoadableRecipeForm} />
-              <Route path="/reciperesults" component={LoadableRecipeResults} />
-              <Route path="/savedrecipes" component={LoadableSavedRecipes} />
-              <Route path="/terms" component={LoadableTerms} />
+              <Route
+                exact
+                path="/"
+                component={withTracker(LoadableRecipeForm)}
+              />
+              <Route
+                path="/reciperesults"
+                component={withTracker(LoadableRecipeResults)}
+              />
+              <Route
+                path="/savedrecipes"
+                component={withTracker(LoadableSavedRecipes)}
+              />
+              <Route path="/terms" component={withTracker(LoadableTerms)} />
               <Footer />
             </Fragment>
           </Route>

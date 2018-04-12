@@ -12,7 +12,7 @@ import { destroy } from "redux-form";
 import MainWrapper from "../MainWrapper";
 import Progress from "./Progress";
 import pgMinMax from "../utils/pgMinMax";
-import Welcome from "./Welcome";
+// import Welcome from "./Welcome";
 
 const toRender = props => {
   const {
