@@ -7,13 +7,12 @@ import { Provider } from "react-redux";
 import store from "./reducers/store";
 import "regenerator-runtime/runtime";
 import { BrowserRouter, Route } from "react-router-dom";
-import withTracker from "./PageTracker";
 
 ReactDOM.render(
   <Fragment>
     <Provider store={store}>
       <BrowserRouter>
-        <Route component={withTracker(App)} />
+        <Route component={App} />
       </BrowserRouter>
     </Provider>
   </Fragment>,
