@@ -38,10 +38,20 @@ class App extends Component {
           <Route path="/">
             <Fragment>
               <Banner />
-              <Route exact path="/" component={LoadableRecipeForm} />
-              <Route path="/reciperesults" component={LoadableRecipeResults} />
-              <Route path="/savedrecipes" component={LoadableSavedRecipes} />
-              <Route path="/terms" component={LoadableTerms} />
+              <Route
+                exact
+                path="/"
+                component={withTracker(LoadableRecipeForm)}
+              />
+              <Route
+                path="/reciperesults"
+                component={withTracker(LoadableRecipeResults)}
+              />
+              <Route
+                path="/savedrecipes"
+                component={withTracker(LoadableSavedRecipes)}
+              />
+              <Route path="/terms" component={withTracker(LoadableTerms)} />
               <Footer />
             </Fragment>
           </Route>
