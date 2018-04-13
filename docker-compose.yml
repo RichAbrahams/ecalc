@@ -5,6 +5,10 @@ services:
     container_name: ewiz
     image: richabrahams/custom_nginx 
     restart: unless-stopped
+    links: 
+      links:
+      - "musing_galileo"
+      - "nginx-proxy"
     environment:
       - VIRTUAL_HOST=www.eliquidwizard.com
       - LETSENCRYPT_HOST=www.eliquidwizard.com
