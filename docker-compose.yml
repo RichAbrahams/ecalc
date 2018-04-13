@@ -6,7 +6,6 @@ services:
     image: richabrahams/custom_nginx 
     restart: unless-stopped
     links: 
-      links:
       - "musing_galileo"
       - "nginx-proxy"
     environment:
