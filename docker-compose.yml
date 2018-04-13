@@ -7,9 +7,11 @@ services:
       - 80:80
       - 443:443
     enviroment:
-      - VIRTUAL_HOST=example.com,www.example.com,mail.example.com
-      - LETSENCRYPT_HOST=example.com,www.example.com,mail.example.com
-      - LETSENCRYPT_EMAIL=foo@bar.com
+      - VIRTUAL_HOST=www.eliquidwizard.com
+      - LETSENCRYPT_HOST=www.eliquidwizard.com
+      - LETSENCRYPT_EMAIL=richardabrahams75@gmail.com
     volumes:
       - ./build:/usr/share/nginx/html
       - ./nginx.conf:/etc/nginx/
+
+     
