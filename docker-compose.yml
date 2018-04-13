@@ -14,7 +14,8 @@ services:
     volumes:
       - ./build:/usr/share/nginx/html 
 networks:
-  - webproxy
+  webproxy:
+    external: true
   
 
 #docker run -d --name eliquidwizard -e \
