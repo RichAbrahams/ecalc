@@ -1,17 +1,18 @@
+
 version: '3'
 services:
   ewiz:
-    image: nginx:latest
+    container_name: ewiz
+    image: richabrahams/custom_nginx 
     restart: unless-stopped
-    ports:
-      - 80:80
-      - 443:443
-    enviroment:
+    environment:
       - VIRTUAL_HOST=www.eliquidwizard.com
       - LETSENCRYPT_HOST=www.eliquidwizard.com
       - LETSENCRYPT_EMAIL=richardabrahams75@gmail.com
     volumes:
-      - ./build:/usr/share/nginx/html
-      - ./nginx.conf:/etc/nginx/
+      - ./build:/usr/share/nginx/html 
 
-     
+      # docker run -d --name ewiz -e 
+      # "VIRTUAL_HOST=www.eliquidwizard.com" -e 
+      # "LETSENCRYPT_HOST=www.eliquidwizard.com" -e 
+      # "LETSENCRYPT_EMAIL=richardabrahams75@gmail.com" ewiz
