@@ -5,9 +5,8 @@ services:
     container_name: ewiz
     image: richabrahams/custom_nginx 
     restart: unless-stopped
-    links: 
-      - "musing_galileo"
-      - "nginx-proxy"
+    networks:
+      - frontend
     environment:
       - VIRTUAL_HOST=www.eliquidwizard.com
       - LETSENCRYPT_HOST=www.eliquidwizard.com
@@ -15,7 +14,7 @@ services:
     volumes:
       - ./build:/usr/share/nginx/html 
 
-      # docker run -d --name ewiz -e 
-      # "VIRTUAL_HOST=www.eliquidwizard.com" -e 
-      # "LETSENCRYPT_HOST=www.eliquidwizard.com" -e 
-      # "LETSENCRYPT_EMAIL=richardabrahams75@gmail.com" ewiz
+  #    docker run -d --name ewiz -e \
+  #    "VIRTUAL_HOST=www.eliquidwizard.com" -e \
+  #    "LETSENCRYPT_HOST=www.eliquidwizard.com" -e \
+  #    "LETSENCRYPT_EMAIL=richardabrahams75@gmail.com" ewiz 
