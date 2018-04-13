@@ -6,7 +6,7 @@ services:
     image: richabrahams/custom_nginx 
     restart: unless-stopped
     networks:
-      - frontend
+      - webproxy
     environment:
       - VIRTUAL_HOST=www.eliquidwizard.com
       - LETSENCRYPT_HOST=www.eliquidwizard.com
