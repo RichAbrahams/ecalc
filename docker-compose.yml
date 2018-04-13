@@ -13,10 +13,13 @@ services:
       - LETSENCRYPT_EMAIL=richardabrahams75@gmail.com
     volumes:
       - ./build:/usr/share/nginx/html 
-    networks:
-      - webproxy
+networks:
+  webproxy
+  
 
-  #    docker run -d --name ewiz -e \
-  #    "VIRTUAL_HOST=www.eliquidwizard.com" -e \
-  #    "LETSENCRYPT_HOST=www.eliquidwizard.com" -e \
-  #    "LETSENCRYPT_EMAIL=richardabrahams75@gmail.com" ewiz 
+#docker run -d --name eliquidwizard -e \
+#"VIRTUAL_HOST=www.eliquidwizard.com" -e \
+#"LETSENCRYPT_HOST=www.eliquidwizard.com" -e \
+#"LETSENCRYPT_EMAIL=richardabrahams75@gmail.com" \
+#--network=webproxy \ 
+#eliquidwizard 
